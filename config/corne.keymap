@@ -11,6 +11,11 @@
 
 #define AS(keycode) &as LS(keycode) keycode
 
+&mt {
+  tapping-term-ms = <200>;
+  flavor = "tap-preferred";
+};
+
 / {
     chosen {
       zmk,matrix_transform = &five_column_transform;
@@ -76,7 +81,7 @@
    AS(Q) AS(W) AS(E) AS(R) AS(T)     AS(Y)   AS(U)  AS(I)     AS(O)     AS(P)
    AS(A) AS(S) AS(D) AS(F) AS(G)     AS(H)   AS(J)  AS(K)     AS(L)     AS(SQT)
    AS(Z) AS(X) AS(C) AS(V) AS(B)     AS(N)   AS(M)  &kp LCTL  &kp RALT  AS(DOT)
-        &kp LGUI &mo 1 &kp SPACE     AS(RET) &mo 2  &kp BSPC
+        &kp LGUI &mt 1 SPACE &kp SPACE     AS(RET) &mt 2 SPACE &kp BSPC
                         >;
                 };
 
