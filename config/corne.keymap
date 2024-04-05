@@ -92,11 +92,11 @@
                         // |  A  |  S  |  D  |  F  |  G  |     |  H  |  J   |  K   |  L   | ; | 
                         // |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M   |  ,   |  .   | / |
                         //             | ESC | TAB | SPC |     | ENT | RSE  | BSPC |
-                        display-name = "mars";
+                        display-name = "ear";
                         bindings = <
-                            AS(Q) AS(W) AS(E) AS(R) AS(T)     AS(Y)   AS(U)  AS(I)     AS(O)     AS(P)
+                            &kp Q       &kp W        &kp E       &kp R         &kp T /*            */ &kp Y &kp U        &kp I       &kp O        &kp P
                             AS(A) AS(S) AS(D) AS(F) AS(G)     AS(H)   AS(J)  AS(K)     AS(L)     AS(SQT)
-                            AS(Z) AS(X) AS(C) AS(V) AS(B)     AS(N)   AS(M)  &kp LCTL  &kp RALT  AS(DOT)
+                            &kp Z       &kp X        &kp C       &kp V         &kp B /*            */ &kp N &kp M        &kp COMMA   &kp DOT      &kp FSLH
                           &kp ESC    &lt 1 SPACE    &kp TAB  /*            */ &kp RET    &lt 2 SPACE    &kp BSPC
                         >;
                 };
@@ -107,7 +107,7 @@
 // | BT1   | BT2 | BT3 | BT4 | BT5 |     | LFT | DWN |  UP | RGT |     |
 // | BTCLR |     |     |     |     |     |     |     |     |     |     |
 //               | GUI |     | SPC |     | ENT | ESC | TAB |
-                        display-name = "lll";
+                        display-name = "mar";
                         bindings = <
    &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PRCNT        &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR
    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     &kp LEFT  &kp DOWN  &kp UP          &kp RIGHT &trans 
@@ -122,7 +122,7 @@
 // | -_ |  =+ |  {  |  [  |  (  |     |  )  |  ]  |  }  |  /?  |  \|  |
 // | `~ |     |     |  ,< |  :  |     |  ;  |  .> | CTRL| META |      |
 //            | GUI | ESC | SPC |     | ENT |     | TAB |
-                        display-name = "rrr";
+                        display-name = "mon";
                         bindings = <
 
    AS(N1)    AS(N2)    AS(N3)    AS(N4)    AS(N5)        AS(N6)    AS(N7)    AS(N8)    AS(N9)   AS(N0)
