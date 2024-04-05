@@ -4,23 +4,19 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
-#include <behaviors.dtsi>
 
 
 #define AS(keycode) &as LS(keycode) keycode
 
-&mt {
-    flavor = "hold-preferred";
-    tapping-term-ms = <150>;
-};
-
-&lt {
-    flavor = "balanced";
-    tapping-term-ms = <150>;
-};
+// LAYERS
+#define DEFAULT 0
+#define NUM     1
+#define SYM     2
+#define NAV     3
+#define SET     4
 
 / {
     chosen {
@@ -48,7 +44,7 @@
         };
     };
 
-    /*                              36 KEY MATRIX / LAYOUT MAPPING
+        /*                              36 KEY MATRIX / LAYOUT MAPPING
         ╭────────────────────┬────────────────────╮ ╭─────────────────────┬─────────────────────╮
         │  0   1   2   3   4 │  5   6   7   8   9 │ │ LT4 LT3 LT2 LT1 LT0 │ RT0 RT1 RT2 RT3 RT4 │
         │ 10  11  12  13  14 │ 15  16  17  18  19 │ │ LM4 LM3 LM2 LM1 LM0 │ RM0 RM1 RM2 RM3 RM4 │
@@ -82,53 +78,82 @@
            bindings = <&kp RET>;
            };
         };
-
+        
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
-                        // --------------------------------------------------------------------
-                        // |  Q  |  W  |  E  |  R  |  T  |     |  Y  |  U   |  I   |  O   | P |
-                        // |  A  |  S  |  D  |  F  |  G  |     |  H  |  J   |  K   |  L   | ; | 
-                        // |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M   |  ,   |  .   | / |
-                        //             | ESC | TAB | SPC |     | ENT | RSE  | BSPC |
-                        display-name = "ear";
-                        bindings = <
-                            &kp Q       &kp W        &kp E       &kp R         &kp T /*            */ &kp Y &kp U        &kp I       &kp O        &kp P
-                            &hm LALT A  &hm LCTRL S  &hm LGUI D  &hm LSHIFT F  &kp G /*            */ &kp H &hm RSHIFT J &hm RGUI K  &hm RCTRL L  &hm RALT SEMI
-                            &kp Z       &kp X        &kp C       &kp V         &kp B /*            */ &kp N &kp M        &kp COMMA   &kp DOT      &kp FSLH
-                          &kp ESC    &lt 1 SPACE    &kp TAB  /*            */ &kp RET    &lt 2 SPACE    &kp BSPC
-                        >;
-                };
-
-                lower_layer {
 // -----------------------------------------------------------------------------------------
-// | !     |  @  |  #  |  $  |  %  |     |  ^  |  &  |  *  |  (  |  )  |
-// | BT1   | BT2 | BT3 | BT4 | BT5 |     | LFT | DWN |  UP | RGT |     |
-// | BTCLR |     |     |     |     |     |     |     |     |     |     |
-//               | GUI |     | SPC |     | ENT | ESC | TAB |
-                        display-name = "mar";
+// |  Q  |  W  |  E  |  R  |  T  |     |  Y  |  U   |  I   |  O   | P |
+// |  A  |  S  |  D  |  F  |  G  |     |  H  |  J   |  K   |  L   | ' | 
+// |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M   | CTRL | META | . |
+//             | ESC | TAB | SPC |     | ENT | RSE  | BSPC |
+                        display-name = "Base";
                         bindings = <
-   &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PRCNT        &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR
-   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     &kp LEFT  &kp DOWN  &kp UP          &kp RIGHT &trans 
-   &bt BT_CLR   &trans       &trans       &trans       &trans           &trans    &trans    &trans          &trans    &trans 
-                             &bootloader     &trans       &kp SPACE        AS(RET)   &kp ESC   &kp TAB
+    &kp Q       &kp W        &kp E       &kp R         &kp T /*            */ &kp Y &kp U        &kp I       &kp O        &kp P
+    &hm LALT A  &hm LCTRL S  &hm LGUI D  &hm LSHIFT F  &kp G /*            */ &kp H &hm RSHIFT J &hm RGUI K  &hm RCTRL L  &hm RALT SEMI
+    &kp Z       &kp X        &kp C       &kp V         &kp B /*            */ &kp N &kp M        &kp COMMA   &kp DOT      &kp FSLH
+                               &kp ESC &lt SYM SPACE &kp TAB /*            */ &kp RET &lt NUM SPACE  &kp BSPC
                         >;
                 };
 
-                raise_layer {
+                mnfn_layer {
+// -----------------------------------------------------------------------------------------
+// | F1 | F2 | F3 | F4  | F5  |     |   |  1  |  2  |  3  |   |
+// | F6 | F7 | F8 | F9  | F10 |     | 0 |  4  |  5  |  6  |   |
+// |    |    |    | F11 | F12 |     |   |  7  |  8  |  9  |   |
+//           |    |     |     |     |   |     |     |
+                        display-name = "nmfn";
+                        bindings = <
+    &kp F1       &kp F2        &kp F3       &kp F4         &kp F5  /*            */ &trans    &kp N1        &kp N2       &kp N3        &trans
+    &hm LALT F6  &hm LCTRL F7  &hm LGUI F8  &hm LSHIFT F9  &kp F10 /*            */ &kp N0    &hm RSHIFT N4 &hm RGUI N5  &hm RCTRL N6  &trans
+    &trans       &trans        &trans       &kp F11        &kp F12 /*            */ &trans    &kp N7        &kp N8       &kp N9        &trans
+                                              &bootloader &trans &trans /*            */ &trans &trans &bootloader
+                        >;
+                };
+
+                sym_layer {
 // -----------------------------------------------------------------------------------------
 // | 1! |  2@ |  3# |  4$ |  5% |     |  6^ |  7& |  8* |  9(  |  0)  |
 // | -_ |  =+ |  {  |  [  |  (  |     |  )  |  ]  |  }  |  /?  |  \|  |
 // | `~ |     |     |  ,< |  :  |     |  ;  |  .> | CTRL| META |      |
 //            | GUI | ESC | SPC |     | ENT |     | TAB |
-                        display-name = "mon";
+                        display-name = "Raise";
                         bindings = <
-
    AS(N1)    AS(N2)    AS(N3)    AS(N4)    AS(N5)        AS(N6)    AS(N7)    AS(N8)    AS(N9)   AS(N0)
    AS(MINUS) AS(EQUAL) &kp LBRC  &kp LBKT  &kp LPAR      &kp RPAR  &kp RBKT  &kp RBRC  AS(FSLH) AS(BSLH)
    AS(GRAVE) &trans    &trans    AS(COMMA) &kp COLON     &kp SEMI  AS(DOT)   &kp LCTRL &kp RALT &trans
-                       &kp LGUI  &kp ESC   &kp SPACE     AS(RET)   &trans    &bootloader
+                       &bootloader &trans &trans      &trans &trans &bootloader
+                        >;
+                };
+
+                nav_layer {
+// -----------------------------------------------------------------------------------------
+// | !     |  @  |  #  |  $  |  %  |     |  ^  |  &  |  *  |  (  |  )  |
+// | BT1   | BT2 | BT3 | BT4 | BT5 |     | LFT | DWN |  UP | RGT |     |
+// | BTCLR |     |     |     |     |     |     |     |     |     |     |
+//               | GUI |     | SPC |     | ENT | ESC | TAB |
+                        display-name = "navi";
+                        bindings = <
+   &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PRCNT        &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR
+   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     &kp LEFT  &kp DOWN  &kp UP          &kp RIGHT &trans 
+   &bt BT_CLR   &trans       &trans       &trans       &trans           &trans    &trans    &trans          &trans    &trans 
+                             &kp LGUI     &trans       &kp SPACE        AS(RET)   &kp ESC   &kp TAB 
+                        >;
+                };
+
+                set_layer {
+// -----------------------------------------------------------------------------------------
+// | !     |  @  |  #  |  $  |  %  |     |  ^  |  &  |  *  |  (  |  )  |
+// | BT1   | BT2 | BT3 | BT4 | BT5 |     | LFT | DWN |  UP | RGT |     |
+// | BTCLR |     |     |     |     |     |     |     |     |     |     |
+//               | GUI |     | SPC |     | ENT | ESC | TAB |
+                        display-name = "setup";
+                        bindings = <
+   &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PRCNT        &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR
+   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     &kp LEFT  &kp DOWN  &kp UP          &kp RIGHT &trans 
+   &bt BT_CLR   &trans       &trans       &trans       &trans           &trans    &trans    &trans          &trans    &trans 
+                             &kp LGUI     &trans       &kp SPACE        AS(RET)   &kp ESC   &kp TAB
                         >;
                 };
         };
