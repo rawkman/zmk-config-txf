@@ -66,22 +66,42 @@
            bindings = <&kp F18>;
            };
            
+           combo_esc {
+           timeout-ms = <50>;
+           key-positions = <1 2>;
+           bindings = <&kp ESC>;
+           };
+
            combo_bspc {
            timeout-ms = <50>;
            key-positions = <7 8>;
            bindings = <&kp BSPC>;
            };
 
-           combo_enter1 {
+           combo_lenter {
            timeout-ms = <50>;
            key-positions = <26 27>;
            bindings = <&kp RET>;
            };
 
-           combo_enter2 {
+           combo_renter {
            timeout-ms = <50>;
            key-positions = <22 23>;
            bindings = <&kp RET>;
+           };
+
+           combo_lbloader {
+           layers = <NUM>;
+           timeout-ms = <50>;
+           key-positions = <5 15 25>;
+           bindings = <&bootloader>;
+           };
+
+           combo_rbloader {
+           layers = <SYM>;
+           timeout-ms = <50>;
+           key-positions = <4 14 24>;
+           bindings = <&bootloader>;
            };
         };
         
@@ -114,7 +134,7 @@
     &kp F1       &kp F2        &kp F3       &kp F4         &kp F5  /*            */ &trans    &kp N1        &kp N2       &kp N3        &trans
     &hm LALT F6  &hm LCTRL F7  &hm LGUI F8  &hm LSHIFT F9  &kp F10 /*            */ &kp N0    &hm RSHIFT N4 &hm RGUI N5  &hm RCTRL N6  &trans
     &trans       &trans        &trans       &kp F11        &kp F12 /*            */ &trans    &kp N7        &kp N8       &kp N9        &trans
-                                              &bootloader &trans &trans /*            */ &trans &trans &bootloader
+                                              &trans &trans &trans /*            */ &trans &trans &trans
                         >;
                 };
 
@@ -125,10 +145,10 @@
                 // |   |     |  - |  \ |    |            |    |  | |  + | ~  |   |
                     display-name = "smb";
                         bindings = <
-   &kp EXCL  &kp AT      &kp HASH   &kp DLLR  &kp PRCNT     &kp CARET  &kp AMPS  &kp ASTERISK  &kp GRAVE   &kp SQT
-   &none     &kp EQUAL   &kp LBRC   &kp LBKT  &kp LPAR      &kp RPAR   &kp RBKT  &kp RBRC      &kp UNDER   &kp DQT
-   &none     &none       &kp MINUS  &kp BSLH  &none         &none      &kp PIPE  &kp PLUS      &kp TILDE   &none
-                       &bootloader &trans &trans          &trans &trans &bootloader
+   &kp EXCL  &kp AT      &kp HASH   &kp DLLR  &kp PRCNT /*            */ &kp CARET  &kp AMPS  &kp ASTERISK  &kp GRAVE   &kp SQT
+   &none     &kp EQUAL   &kp LBRC   &kp LBKT  &kp LPAR  /*            */ &kp RPAR   &kp RBKT  &kp RBRC      &kp UNDER   &kp DQT
+   &none     &none       &kp MINUS  &kp BSLH  &none     /*            */ &none      &kp PIPE  &kp PLUS      &kp TILDE   &none
+                                  &trans &trans &trans  /*            */ &trans &trans &trans
                         >;
                 };
 
@@ -140,10 +160,10 @@
                 //                 |      |        |     |          |     |     |      | 
                         display-name = "nav";
                         bindings = <
-   &trans       &trans       &kp LC(LEFT) &kp LC(RIGHT) &kp LC(UP)      &trans    &kp HOME  &kp UP    &kp PG_UP   &trans 
-   &kp LALT     &kp LCTRL    &kp LGUI     &kp LSHIFT    &kp LC(DOWN)    &trans    &kp LEFT  &kp DOWN  &kp RIGHT   &trans 
-   &trans       &trans       &trans       &trans        &trans          &trans    &kp END   &kp DEL   &kp PG_DN   &trans 
-                                   &bootloader  &trans  &trans          &trans  &trans  &bootloader 
+   &trans       &trans       &kp LC(LEFT) &kp LC(RIGHT) &kp LC(UP)   /*            */ &trans    &kp HOME  &kp UP    &kp PG_UP   &trans
+   &kp LALT     &kp LCTRL    &kp LGUI     &kp LSHIFT    &kp LC(DOWN) /*            */ &trans    &kp LEFT  &kp DOWN  &kp RIGHT   &trans
+   &trans       &trans       &trans       &trans        &trans       /*            */ &trans    &kp END   &kp DEL   &kp PG_DN   &trans
+                                             &trans  &trans  &trans  /*            */ &trans  &trans  &trans
                         >;
                 };
 
