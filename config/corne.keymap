@@ -103,10 +103,10 @@
                 //             | ESC | TAB | SPC |     | ENT | RSE  | BSPC |
                         display-name = "ap";
                         bindings = <
-    &kp Q       &kp W        &kp E       &kp R         &kp T /*            */ &kp Y &kp U        &kp I       &kp O        &kp P
-    &hm LALT A  &hm LCTRL S  &hm LGUI D  &hm LSHIFT F  &kp G /*            */ &kp H &hm RSHIFT J &hm RGUI K  &hm RCTRL L  &hm RALT SEMI
-    &kp Z       &kp X        &kp C       &kp V         &kp B /*            */ &kp N &kp M        &kp COMMA   &kp DOT      &kp FSLH
-                  &lt LON ESC   &lt SYM SPACE   &mt LGUI TAB /*            */ &lt NAV RET   &lt NUM SPACE   &lt RON BSPC
+    &kp Q       &kp W        &kp E        &kp R            &kp T /*              */ &kp Y         &kp U           &kp I         &kp O        &kp P
+    &hm LALT A  &hm LCTRL S  &hm LGUI D   &hm LSHIFT F     &kp G /*              */ &kp H         &hm RSHIFT J    &hm RGUI K    &hm RCTRL L  &hm RALT SEMI
+    &kp Z       &kp X        &kp C        &kp V            &kp B /*              */ &kp N         &kp M           &kp COMMA     &kp DOT      &kp FSLH
+                             &lt LON ESC  &lt SYM SPACE    &mt LGUI TAB /*       */ &lt NAV RET   &lt NUM SPACE   &lt RON BSPC
                         >;
                 };
 
@@ -116,12 +116,12 @@
                 // | F6 | F7 | F8 | F9  | F10 |     | 0 |  4  |  5  |  6  |   |
                 // |    |    |    | F11 | F12 |     |   |  7  |  8  |  9  |   |
                 //           |    |     |     |     |   |     |     |
-                        display-name = "fn";
+                        display-name = "fnm";
                         bindings = <
     &kp F1       &kp F2        &kp F3       &kp F4         &kp F5  /*            */ &trans    &kp N1        &kp N2       &kp N3        &trans
     &hm LALT F6  &hm LCTRL F7  &hm LGUI F8  &hm LSHIFT F9  &kp F10 /*            */ &kp N0    &hm RSHIFT N4 &hm RGUI N5  &hm RCTRL N6  &trans
     &trans       &trans        &trans       &kp F11        &kp F12 /*            */ &trans    &kp N7        &kp N8       &kp N9        &trans
-                                              &trans &trans &trans /*            */ &trans &trans &bootloader
+                               &trans       &trans         &trans  /*            */ &trans    &trans        &bootloader
                         >;
                 };
 
@@ -130,12 +130,12 @@
                 // | ! |  @  |  # |  $ |  % |            |  ^ |  & |  * | `  | ' |
                 // |   |  =  |  { |  [ |  ( |            |  ) |  ] |  } | _  | " | 
                 // |   |     |  - |  \ |    |            |    |  | |  + | ~  |   |
-                    display-name = "sb";
+                    display-name = "syb";
                         bindings = <
    &kp EXCL  &kp AT      &kp HASH   &kp DLLR   &kp PRCNT /*            */ &kp CARET  &kp AMPS  &kp ASTERISK  &kp GRAVE   &kp SQT
    &none     &kp EQUAL   &kp LBRC   &kp LBKT    &kp LPAR /*            */ &kp RPAR   &kp RBKT  &kp RBRC      &kp UNDER   &kp DQT
    &none     &none       &kp MINUS  &kp BSLH       &none /*            */ &none      &kp PIPE  &kp PLUS      &kp TILDE   &none
-                               &bootloader &trans &trans /*            */ &trans &trans &trans
+                       &bootloader  &trans        &trans /*            */ &trans     &trans    &trans
                         >;
                 };
 
@@ -145,12 +145,12 @@
                 // | LALT  | LCTRL | LGUI | LSHIFT |     |          |     | LFT |  DWN | RGT |     |
                 // |       |       |      |        |     |          |     | END |  DEL |PG_DN|     |
                 //                 |      |        |     |          |     |     |      | 
-                        display-name = "nv";
+                        display-name = "nav";
                         bindings = <
    &trans       &trans       &trans       &trans        &trans /*            */ &trans   &kp HOME  &kp UP    &kp PG_UP   &trans
    &kp LALT     &kp LCTRL    &kp LGUI     &kp LSHIFT    &trans /*            */ &trans   &kp LEFT  &kp DOWN  &kp RIGHT   &trans
    &trans       &trans       &trans       &trans        &trans /*            */ &trans   &kp END   &kp DEL   &kp PG_DN   &trans
-                                        &trans  &trans  &trans /*            */ &trans   &trans    &trans
+                             &trans       &trans        &trans /*            */ &trans   &trans    &trans
                         >;
                 };
 
@@ -160,12 +160,12 @@
                 // |       |       | vdr-d |     |        |     | BTC |     |     |     |     |
                 // |       |       |       |     |        |     |     |     |     |     |     |
                 //                 |       |     |        |     |     |     |     |
-                        display-name = "ly";
+                        display-name = "lly";
                         bindings = <
    &kp LC(LEFT) &kp LC(RIGHT) &kp LC(UP)    &none         &none /*            */ &bt BT_SEL 0  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_SEL 4
    &none        &none         &kp LC(DOWN)  &none         &none /*            */ &bt BT_CLR    &none        &none        &none         &none
    &none        &none         &none         &none         &none /*            */ &none         &none        &none        &none         &none
-                              &none         &none   &bootloader /*            */ &none         &none        &none
+                              &trans        &none   &bootloader /*            */ &none         &none        &none
                         >;
                 };
  
@@ -175,12 +175,12 @@
                     // |     |     |     |     |     |        |    |    |    |    |    |
                     // |     |     |     |     |     |        |    |    |    |    |    |
                     //             |     |     |     |        |    |    |    |
-                            display-name = "ry";
+                            display-name = "rly";
                             bindings = <
-       &none     &none      &none     &none     &none /*            */ &none     &none      &none     &none     &none
-       &none     &none      &none     &none     &none /*            */ &none     &none      &none     &none     &none
-       &none     &none      &none     &none     &none /*            */ &none     &none      &none     &none     &none
-                            &none     &none     &none /*            */ &none     &none      &bootloader
+       &none     &none      &none     &none     &none /*            */ &none           &none      &none     &none     &none
+       &none     &none      &none     &none     &none /*            */ &none           &none      &none     &none     &none
+       &none     &none      &none     &none     &none /*            */ &none           &none      &none     &none     &none
+                            &none     &none     &none /*            */ &bootloader     &none      &trans
                             >;
                     };
         };
