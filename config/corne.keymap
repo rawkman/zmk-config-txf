@@ -56,36 +56,42 @@
         combos {
            compatible = "zmk,combos";
            combo_cword {
+           layers = <0>;
            timeout-ms = <50>;
            key-positions = <28 29>;
            bindings = <&kp CAPSLOCK>;
            };
 
            combo_sj {
+           layers = <0>;
            timeout-ms = <50>;
            key-positions = <27 28>;
            bindings = <&kp F18>;
            };
            
            combo_bspc {
+           layers = <0>;
            timeout-ms = <50>;
            key-positions = <7 8>;
            bindings = <&kp BSPC>;
            };
 
            combo_renter {
+           layers = <0>;
            timeout-ms = <50>;
            key-positions = <26 27>;
            bindings = <&kp RET>;
            };
 
            combo_lenter {
+           layers = <0>;
            timeout-ms = <50>;
            key-positions = <22 23>;
            bindings = <&kp RET>;
            };
 
            combo_esc {
+           layers = <0>;
            timeout-ms = <50>;
            key-positions = <1 2>;
            bindings = <&kp ESC>;
