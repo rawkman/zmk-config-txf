@@ -121,6 +121,13 @@
             ╰───────╮ 30  31  32 │ 33  34  35 ╭───────╯ ╰───────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────╯
                     ╰────────────┴────────────╯                 ╰─────────────┴─────────────╯             */
         
+           combo_resc {
+           layers = <2>;
+           timeout-ms = <50>;
+           key-positions = <1 2>;
+           bindings = <&kp EXCL>;
+           };
+
            combo_sqt {
            layers = <2>;
            timeout-ms = <50>;
@@ -171,13 +178,13 @@
 
                 sym_layer {
                 // ---------------------------------------------------------------
-                // | ! |  @  |  # |  $ |  % |            |  ^ |  & |  * | `  | ~ |
+                // |   |  @  |  # |  $ |  % |            |  ^ |  & |  * | `  | ~ |
                 // | ' |  =  |  { |  [ | <  |            |  > |  ] |  } | _  | : |
                 // | " |  \  |  - |  ( |    |            |    |  ) |  + | |  | ? |
                 //           |    |    |    |            |    |    |    |
                     display-name = "syb";
                         bindings = <
-   &kp EXCL  &kp AT      &kp HASH   &kp DLLR   &kp PRCNT /*            */ &kp CARET  &kp AMPS  &kp ASTERISK  &kp GRAVE   &kp TILDE
+   &none     &kp AT      &kp HASH   &kp DLLR   &kp PRCNT /*            */ &kp CARET  &kp AMPS  &kp ASTERISK  &kp GRAVE   &kp TILDE
    &kp SQT   &kp EQUAL   &kp LBRC   &kp LBKT   &kp LT    /*            */ &kp GT     &kp RBKT  &kp RBRC      &kp UNDER   &kp COLON
    &kp DQT   &kp BSLH    &kp MINUS  &kp LPAR   &none     /*            */ &none      &kp RPAR  &kp PLUS      &kp PIPE    &kp QMARK
                          &trans     &trans     &trans    /*            */ &trans     &trans    &trans
