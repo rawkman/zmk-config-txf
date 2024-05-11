@@ -147,32 +147,34 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
-                // --------------------------------------------------------------------
-                // |  Q  |  W  |  E  |  R  |  T  |     |  Y  |  U   |  I   |  O   | P |
-                // |  A  |  S  |  D  |  F  |  G  |     |  H  |  J   |  K   |  L   | ; | 
-                // |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M   | ,    |  .   | / | 
-                //             | ESC |BSPC | TAB |     | RET | SPC  | ESC  |
+                                        // ----------------------------------------------------------------------
+                                        // |  Q  |  W  |  E  |  R  |  T  |       |  Y  |  U   |  I   |  O   | P |
+                                        // |  A  |  S  |  D  |  F  |  G  |       |  H  |  J   |  K   |  L   | ; |
+                                        // |  Z  |  X  |  C  |  V  |  B  |       |  N  |  M   | ,    |  .   | / |
+                                        //             | ESC |BSPC | TAB |       | RET | SPC  | ESC  |
+                                        // ----------------------------------------------------------------------
                         display-name = "ap";
                         bindings = <
-    &kp Q       &kp W        &kp E        &kp R            &kp T /*              */ &kp Y         &kp U           &kp I         &kp O        &kp P
-    &hmp LALT A &hm LCTRL S  &hm LGUI D   &lt SYM F        &kp G /*              */ &kp H         &lt SYM J       &hm RGUI K    &hm RCTRL L  &hmp RALT SEMI
-    &kp Z       &kp X        &kp C        &kp V            &kp B /*              */ &kp N         &kp M           &kp COMMA     &kp DOT      &mt RSHIFT FSLH
-                        &lt LON ESC  &hm LSHIFT BSPC    &mt LGUI TAB /*       */ &lt NAV RET   &lt NUM SPACE   &lt RON ESC
+    &kp Q        &kp W        &kp E        &kp R             &kp T         /*     */ &kp Y         &kp U           &kp I         &kp O        &kp P
+    &hmp LALT A  &hm LCTRL S  &hm LGUI D   &lt SYM F         &kp G         /*     */ &lt NUM H     &lt SYM J       &hm RGUI K    &hm RCTRL L  &hmp RALT SEMI
+    &kp Z        &kp X        &kp C        &lt NUM V         &kp B         /*     */ &kp N         &kp M           &kp COMMA     &kp DOT      &kp FSLH
+                              &lt LON ESC  &hm LSHIFT BSPC   &mt LGUI TAB  /*     */ &lt NAV RET   &hm RSHIFT SPACE   &lt RON ESC
                         >;
                 };
 
                 mnfn_layer {
-                // -------------------------------------------------------------
-                // | F1 | F2 | F3 | F4  | F5  |     |   |  1  |  2  |  3  |  . |
-                // | F6 | F7 | F8 | F9  | F10 |     |   |  4  |  5  |  6  |  , |
-                // |    |    |    | F11 | F12 |     |   |  7  |  8  |  9  |  0 |
-                //           |    |     |     |     |   |     |     |
+                                       // -----------------------------------------------------------------
+                                       // | F1 | F2  | F3  | F4  | F5  |       | _t |  1  |  2  |  3  |  . |
+                                       // | F6 | F7  | F8  | F9  | F10 |       | _t |  4  |  5  |  6  |  , |
+                                       // | F5 | F10 | F11 | _t  | F12 |       | _t |  7  |  8  |  9  |  0 |
+                                       //            |     |     |     |       |    |     |     |
+                                       // -----------------------------------------------------------------
                         display-name = "fn";
                         bindings = <
-    &kp F1       &kp F2        &kp F3       &kp F4         &kp F5  /*            */ &trans    &kp N1        &kp N2       &kp N3        &kp DOT
-    &hm LALT F6  &hm LCTRL F7  &hm LGUI F8  &hm LSHIFT F9  &kp F10 /*            */ &trans    &hm RSHIFT N4 &hm RGUI N5  &hm RCTRL N6  &hm RALT COMMA
-    &trans       &trans        &trans       &kp F11        &kp F12 /*            */ &trans    &kp N7        &kp N8       &kp N9        &kp N0
-                               &trans       &trans         &trans  /*            */ &trans    &trans        &trans
+    &kp F1        &kp F2        &kp F3       &kp F4         &kp F5   /*     */ &trans    &kp N1        &kp N2       &kp N3        &kp  DOT
+    &hmp LALT F6  &hm LCTRL F7  &hm LGUI F8  &hm LSHIFT F9  &kp F10  /*     */ &trans    &hm RSHIFT N4 &hm RGUI N5  &hm RCTRL N6  &hmp RALT COMMA
+    &kp F5        &kp F10       &kp F11      &trans         &kp F12  /*     */ &trans    &kp N7        &kp N8       &kp N9        &kp  N0
+                                &trans       &trans         &trans   /*     */ &trans    &trans        &trans
                         >;
                 };
 
@@ -184,10 +186,10 @@
                 //           |    |    |    |            |    |    |    |
                     display-name = "sb";
                         bindings = <
-   &none     &kp AT      &kp HASH   &kp DLLR   &kp PRCNT /*            */ &kp CARET  &kp AMPS  &kp ASTERISK  &kp GRAVE   &kp TILDE
-   &kp SQT   &kp EQUAL   &kp LBRC   &trans     &kp LBKT  /*            */ &kp RBKT   &trans    &kp RBRC      &kp UNDER   &kp COLON
-   &kp DQT   &kp BSLH    &kp MINUS  &kp LPAR   &kp LT    /*            */ &kp GT     &kp RPAR  &kp PLUS      &kp PIPE    &kp QMARK
-                         &trans     &trans     &trans    /*            */ &trans     &trans    &trans
+     &none     &kp AT      &kp HASH   &kp DLLR   &kp PRCNT /*     */ &kp CARET  &kp AMPS  &kp ASTERISK  &kp GRAVE   &kp TILDE
+     &kp SQT   &kp EQUAL   &kp LBRC   &trans     &kp LBKT  /*     */ &kp RBKT   &trans    &kp RBRC      &kp UNDER   &kp COLON
+     &kp DQT   &kp BSLH    &kp MINUS  &kp LPAR   &kp LT    /*     */ &kp GT     &kp RPAR  &kp PLUS      &kp PIPE    &kp QMARK
+                           &trans     &trans     &trans    /*     */ &trans     &trans    &trans
                         >;
                 };
 
@@ -199,10 +201,10 @@
                 //                 |      |        |     |          |     |     |      | 
                         display-name = "nv";
                         bindings = <
-   &trans       &trans       &trans       &trans        &trans /*            */ &trans   &kp HOME  &kp UP    &kp PG_UP   &trans
-   &kp LALT     &kp LCTRL    &kp LGUI     &kp LSHIFT    &trans /*            */ &trans   &kp LEFT  &kp DOWN  &kp RIGHT   &trans
-   &trans       &trans       &trans       &trans        &trans /*            */ &trans   &kp END   &kp DEL   &kp PG_DN   &trans
-                             &trans       &trans        &trans /*            */ &trans   &trans    &trans
+   &trans       &trans       &trans       &trans        &trans /*    */ &trans   &kp HOME  &kp UP    &kp PG_UP   &trans
+   &kp LALT     &kp LCTRL    &kp LGUI     &kp LSHIFT    &trans /*    */ &trans   &kp LEFT  &kp DOWN  &kp RIGHT   &trans
+   &trans       &trans       &trans       &trans        &trans /*    */ &trans   &kp END   &kp DEL   &kp PG_DN   &trans
+                             &trans       &trans        &trans /*    */ &trans   &trans    &trans
                         >;
                 };
 
@@ -214,10 +216,10 @@
                 //                 |       |     |        |     |     |     |     |
                         display-name = "ly";
                         bindings = <
-   &kp LC(LEFT) &kp LC(RIGHT) &kp LC(UP)    &none         &none /*            */ &bt BT_SEL 0  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_SEL 4
-   &none        &none         &kp LC(DOWN)  &none         &none /*            */ &bt BT_CLR    &none        &none        &none         &none
-   &none        &none         &none         &none         &none /*            */ &none         &none        &none        &none         &none
-                              &trans        &none   &bootloader /*            */ &none         &none        &none
+   &kp LC(LEFT) &kp LC(RIGHT) &kp LC(UP)    &none         &none /*    */ &bt BT_SEL 0  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_SEL 4
+   &none        &none         &kp LC(DOWN)  &none         &none /*    */ &bt BT_CLR    &none        &none        &none         &none
+   &none        &none         &none         &none         &none /*    */ &none         &none        &none        &none         &none
+                              &trans        &none   &bootloader /*    */ &none         &none        &none
                         >;
                 };
  
@@ -229,10 +231,10 @@
                 //             |     |     |     |        |    |    |    |
                             display-name = "ry";
                             bindings = <
-       &none     &none      &none     &none     &none /*            */ &none           &none      &none     &none     &none
-       &none     &none      &none     &none     &none /*            */ &none           &none      &none     &none     &none
-       &none     &none      &none     &none     &none /*            */ &none           &none      &none     &none     &none
-                            &none     &none     &none /*            */ &bootloader     &none      &trans
+       &none     &none      &none     &none     &none /*    */ &none           &none      &none     &none     &none
+       &none     &none      &none     &none     &none /*    */ &none           &none      &none     &none     &none
+       &none     &none      &none     &none     &none /*    */ &none           &none      &none     &none     &none
+                            &none     &none     &none /*    */ &bootloader     &none      &trans
                             >;
                     };
         };
