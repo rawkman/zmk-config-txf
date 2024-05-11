@@ -53,6 +53,28 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+
+        tdbrc: tap_dance_brc {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LBRC>, <&kp RBRC>;
+        };
+
+        tdpar: tap_dance_par {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LPAR>, <&kp RPAR>;
+        };
+
+        tdbkt: tap_dance_bkt {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LBKT>, <&kp RBKT>;
+        };
+
     };
 
         combos {
@@ -155,9 +177,9 @@
                                         // ----------------------------------------------------------------------
                         display-name = "ap";
                         bindings = <
-    &kp Q        &kp W        &kp E        &kp R             &kp T         /*     */ &kp Y         &kp U           &kp I         &kp O        &kp P
-    &hmp LALT A  &hm LCTRL S  &hm LGUI D   &lt SYM F         &kp G         /*     */ &lt NUM H     &lt SYM J       &hm RGUI K    &hm RCTRL L  &hmp RALT SEMI
-    &kp Z        &kp X        &kp C        &lt NUM V         &kp B         /*     */ &kp N         &kp M           &kp COMMA     &kp DOT      &kp FSLH
+    &kp Q        &kp W        &kp E        &kp R             &kp T         /*     */ &kp Y         &kp U              &kp I         &kp O        &kp P
+    &hmp LALT A  &hm LCTRL S  &hm LGUI D   &lt SYM F         &kp G         /*     */ &lt NUM H     &lt SYM J          &hm RGUI K    &hm RCTRL L  &hmp RALT SEMI
+    &kp Z        &kp X        &kp C        &lt NUM V         &kp B         /*     */ &kp N         &kp M              &kp COMMA     &kp DOT      &kp FSLH
                               &lt LON ESC  &hm LSHIFT BSPC   &mt LGUI TAB  /*     */ &lt NAV RET   &hm RSHIFT SPACE   &lt RON ESC
                         >;
                 };
