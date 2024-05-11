@@ -121,13 +121,13 @@
             ╰───────╮ 30  31  32 │ 33  34  35 ╭───────╯ ╰───────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────╯
                     ╰────────────┴────────────╯                 ╰─────────────┴─────────────╯             */
         
-           combo_lexcl {
-           layers = <2>;
-           timeout-ms = <50>;
-           key-positions = <1 2>;   //   L1 │  0 1 2__3 4
-           bindings = <&kp EXCL>;
-           };
-
+        //    combo_lexcl {
+        //    layers = <2>;
+        //    timeout-ms = <50>;
+        //    key-positions = <1 2>;   //   L1 │  0 1 2__3 4
+        //    bindings = <&kp EXCL>;
+        //    };
+ 
            combo_sqt {
            layers = <2>;
            timeout-ms = <50>;
@@ -179,14 +179,15 @@
                 };
 
                 sym_layer {
-                // ---------------------------------------------------------------
-                // |   |  @  |  # |  $ |  % |            |  ^ |  & |  * | `  | ~ |
-                // | ' |  =  |  { |    |  [ |            |  ] |    |  } | _  | : |
-                // | " |  \  |  - |  ( |  < |            |  > |  ) |  + | |  | ? |
-                //           |    |    |    |            |    |    |    |
+                                    // ---------------------------------------------------------------
+                                    // | ! |  @  |  # |  $ |  % |            |  ^ |  & |  * | `  | ~ |
+                                    // | ' |  =  |  { |    |  [ |            |  ] |    |  } | _  | : |
+                                    // | " |  \  |  - |  ( |  < |            |  > |  ) |  + | |  | ? |
+                                    //           |    |    |    |            |    |    |    |
+                                    // ---------------------------------------------------------------
                     display-name = "sb";
                         bindings = <
-     &none     &kp AT      &kp HASH   &kp DLLR   &kp PRCNT /*     */ &kp CARET  &kp AMPS  &kp ASTERISK  &kp GRAVE   &kp TILDE
+     &kp EXCL  &kp AT      &kp HASH   &kp DLLR   &kp PRCNT /*     */ &kp CARET  &kp AMPS  &kp ASTERISK  &kp GRAVE   &kp TILDE
      &kp SQT   &kp EQUAL   &kp LBRC   &trans     &kp LBKT  /*     */ &kp RBKT   &trans    &kp RBRC      &kp UNDER   &kp COLON
      &kp DQT   &kp BSLH    &kp MINUS  &kp LPAR   &kp LT    /*     */ &kp GT     &kp RPAR  &kp PLUS      &kp PIPE    &kp QMARK
                            &trans     &trans     &trans    /*     */ &trans     &trans    &trans
