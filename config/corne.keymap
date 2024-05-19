@@ -253,9 +253,9 @@
                 // ----------------------------------------------------------------------------------
                         display-name = "nv";
                         bindings = <
-   &trans     &kp LC(LEFT) &kp LC(RIGHT) &kp LC(UP)    &kp LC(DOWN) /*    */ &trans   &kp HOME  &kp UP    &kp PG_UP   &kp trans
-   &kp LALT   &kp LCTRL    &kp LGUI      &kp LSHIFT    &trans       /*    */ &trans   &kp LEFT  &kp DOWN  &kp RIGHT   &kp trans
-   &trans     &trans       &trans        &trans        &trans       /*    */ &trans   &kp END   &kp DEL   &kp PG_DN   &kp trans
+   &trans     &kp LC(LEFT) &kp LC(RIGHT) &kp LC(UP)    &kp LC(DOWN) /*    */ &trans   &kp HOME  &kp UP    &kp PG_UP   &trans
+   &kp LALT   &kp LCTRL    &kp LGUI      &kp LSHIFT    &trans       /*    */ &trans   &kp LEFT  &kp DOWN  &kp RIGHT   &trans
+   &trans     &trans       &trans        &trans        &trans       /*    */ &trans   &kp END   &kp DEL   &kp PG_DN   &trans
                            &trans        &trans        &trans       /*    */ &trans   &trans    &trans
                         >;
                 };
