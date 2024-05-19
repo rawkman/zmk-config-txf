@@ -163,6 +163,34 @@
            key-positions = <17 18>;  //  R2 │  15 16 17__18 19
            bindings = <&kp DQT>;
            };
+
+           combo_rcomc {
+           layers = <3>;
+           timeout-ms = <50>;
+           key-positions = <16 17>;  //  R2
+           bindings = <&kp LG(C)>;
+           };
+
+           combo_rcomv {
+           layers = <3>;
+           timeout-ms = <50>;
+           key-positions = <17 18>;  //  R2
+           bindings = <&kp LG(V)>;
+           };
+
+           combo_rcomx {
+           layers = <3>;
+           timeout-ms = <50>;
+           key-positions = <6 7>;  //  R1
+           bindings = <&kp LG(X)>;
+           };
+
+           combo_rcomz {
+           layers = <3>;
+           timeout-ms = <50>;
+           key-positions = <7 8>;  //  R1
+           bindings = <&kp LG(Z)>;
+           };
         };
         
         keymap {
@@ -225,10 +253,10 @@
                 // ----------------------------------------------------------------------------------
                         display-name = "nv";
                         bindings = <
-   &trans     &kp LC(LEFT) &kp LC(RIGHT) &kp LC(UP)    &kp LC(DOWN) /*    */ &kp LG(C)   &kp HOME  &kp UP    &kp PG_UP   &trans
-   &kp LALT   &kp LCTRL    &kp LGUI      &kp LSHIFT    &trans       /*    */ &kp LG(V)   &kp LEFT  &kp DOWN  &kp RIGHT   &kp LG(Z)
-   &trans     &trans       &trans        &trans        &trans       /*    */ &kp LG(X)   &kp END   &kp DEL   &kp PG_DN   &trans
-                           &trans        &trans        &trans       /*    */ &trans      &trans    &trans
+   &trans     &kp LC(LEFT) &kp LC(RIGHT) &kp LC(UP)    &kp LC(DOWN) /*    */ &trans   &kp HOME  &kp UP    &kp PG_UP   &kp trans
+   &kp LALT   &kp LCTRL    &kp LGUI      &kp LSHIFT    &trans       /*    */ &trans   &kp LEFT  &kp DOWN  &kp RIGHT   &kp trans
+   &trans     &trans       &trans        &trans        &trans       /*    */ &trans   &kp END   &kp DEL   &kp PG_DN   &kp trans
+                           &trans        &trans        &trans       /*    */ &trans   &trans    &trans
                         >;
                 };
 
