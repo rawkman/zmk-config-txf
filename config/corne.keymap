@@ -130,7 +130,7 @@
 
            combo_lesc {
            layers = <0 1>;
-           timeout-ms = <50>;
+           timeout-ms = <25>;
            key-positions = <2 3>;   //   L1 │  0 1 2__3 4
            bindings = <&kp ESC>;
            };
