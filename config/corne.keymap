@@ -82,7 +82,7 @@
            combo_cword {
            layers = <0 1>;
            timeout-ms = <25>;
-           key-positions = <28 29>; //  R3 │ 25 26 27 28__29
+           key-positions = <26 28>; //  R3 │ 25 26_ 27 _28 29
            bindings = <&kp CAPSLOCK>;
            };
 
