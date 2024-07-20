@@ -75,6 +75,13 @@
             bindings = <&kp LBKT>, <&kp RBKT>;
         };
 
+        tdllg: tap_dance_llg {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LT>, <&kp GT>;
+        };
+
     };
 
         combos {
@@ -250,7 +257,7 @@
                         bindings = <
      &kp EXCL  &kp AT      &kp HASH   &kp DLLR   &kp PRCNT /*     */ &kp CARET  &kp AMPS  &kp ASTERISK  &kp GRAVE   &kp TILDE
      &kp SQT   &kp EQUAL   &tdbrc     &trans     &kp BSLH  /*     */ &kp PIPE   &trans    &kp RBRC      &kp UNDER   &kp COLON
-     &kp DQT   &tdbkt      &tdpar     &kp MINUS  &kp LT    /*     */ &kp GT     &kp PLUS  &kp RPAR      &kp RBKT    &kp QMARK
+     &kp DQT   &tdbkt      &tdpar     &kp MINUS  &tdllg    /*     */ &kp GT     &kp PLUS  &kp RPAR      &kp RBKT    &kp QMARK
                            &trans     &trans     &trans    /*     */ &trans     &trans    &trans
                         >;
                 };
